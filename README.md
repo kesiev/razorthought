@@ -48,7 +48,7 @@ KesieV
 Bianca Brenna
 
 ### Music
-Arnaldo Brenna
+Arnaldo Brenna, Sergio Brenna
 
 ### CC0 licensed sound effects
 Kenney, https://opengameart.org/
