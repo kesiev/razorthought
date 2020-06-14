@@ -1,0 +1,153 @@
+#setup .window {
+	left: 1vw;
+	right:1vw;
+	top:1vh;
+	bottom:1vh;
+}
+
+#setup {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top:0;
+	bottom: 0;
+}
+
+#setup .panel {
+	overflow: hidden;
+	position: absolute;
+	top:10vh;
+	width:31.33vw;
+	height:73vh;
+	border-top:1px solid #a8a458;
+	border-bottom:1px solid #a8a458;
+	border-radius: 0.5vw;
+}
+
+#setup .panel.left { left:1vw;}
+#setup .panel.middle {
+	left:33.3vw;
+	height:36vh;
+	width:63.66vw;
+}
+#setup .panel.right {
+	width:63.66vw;
+	left:33.3vw;
+	height:36vh;
+	top:47vh;
+}
+
+#setup .panel .button {
+	width:9vh;
+	height:9vh;
+	position: absolute;
+	background-image: url(card/icons/arrow.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	z-index: 600;
+}
+
+#setup .panel.left .button {
+	top:30vh;
+}
+
+#setup .panel .panelheader {
+	text-shadow: 0 -0.3vh 0px #362016;
+	font-size: 9vh;
+	text-align: center;
+	position: absolute;
+	left:3vw;
+	right:3vw;
+	top:4vh;
+	height:11vh;
+	line-height: 11vh;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+#setup .panel .paneldescription {
+	position: absolute;
+	text-align: center;
+	left:14vw;
+	right:14vw;
+	top:15vh;
+	line-height: 11vh;
+	font-size: 3vh;
+	line-height: 3vh;
+	white-space: normal;
+}
+
+#setup .panel.middle .button,
+#setup .panel.right .button {
+	top:15vh;
+}
+
+#setup .panel .button.left { left:1vw; transform:scaleX(-1);}
+#setup .panel .button.right { right:1vw; }
+
+#setup .panel .roll {
+	transition: left 0.5s;
+	white-space: nowrap;
+	top:0;
+	position: absolute;
+	height: 73vh;
+}
+
+#setup .panel .roll .item {
+	overflow: hidden;
+	position: relative;
+	display: inline-block;	
+}
+
+#setup .panel.left .roll .item {
+	width:31.3vw;
+	height:73vh;	
+}
+
+#setup .panel.middle .roll .item,
+#setup .panel.right .roll .item {
+	background: linear-gradient(to bottom,
+		#970000 0%,
+		#970000 5%,
+		#ffc61e 5.1%,
+		#ffc61e 10%,
+		#970000 10.1%,
+		#7b0000 50%,
+		#970000 90%,
+		#ffc61e 90.1%,
+		#ffc61e 95%,
+		#970000 95.1%,
+		#970000 100%
+	);
+	width:63.66vw;
+	height:36vh;
+}
+
+#setup .panel.selected-0 .roll { left:0; }
+#setup .panel.selected-1 .roll { left:-100%; }
+#setup .panel.selected-2 .roll { left:-200%; }
+#setup .panel.selected-3 .roll { left:-300%; }
+
+/* Deck selector */
+
+#setup .panel .start, #setup .panel .editdeck {
+	position: absolute;
+	left: 1vw;
+	right: 1vw;
+	bottom:1vh;
+	height:7vh;
+	line-height: 7vh;
+	z-index: 600;
+}
+
+/* Start game button */
+
+#setup .start {
+	position: absolute;
+	left:1vw;
+	right:1vw;
+	bottom:1vh;
+	height:12vh;
+	line-height:12vh;
+}

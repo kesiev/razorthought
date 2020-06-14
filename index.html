@@ -1,0 +1,105 @@
+<html>
+<head>
+	<title>Razorthought</title>
+	<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" href="font/specimen_files/specimen_stylesheet.css" type="text/css" charset="utf-8" />
+	<link rel="stylesheet" href="font/stylesheet.css" type="text/css" charset="utf-8" />
+	<link rel="stylesheet" href="css/animations.css" type="text/css" charset="utf-8" />
+	<link rel="stylesheet" href="css/base.css" type="text/css" charset="utf-8" />
+	<link rel="stylesheet" href="css/cover.css" type="text/css" charset="utf-8" />
+	<link rel="stylesheet" href="css/battle.css" type="text/css" charset="utf-8" />
+	<link rel="stylesheet" href="css/deckbuilder.css" type="text/css" charset="utf-8" />
+	<link rel="stylesheet" href="css/setup.css" type="text/css" charset="utf-8" />
+	<link rel="stylesheet" href="css/cardreader.css" type="text/css" charset="utf-8" />
+	<link rel="stylesheet" href="css/tournament.css" type="text/css" charset="utf-8" />
+	<link rel="stylesheet" href="css/chaos.css" type="text/css" charset="utf-8" />
+	<link rel="stylesheet" href="css/mainmenu.css" type="text/css" charset="utf-8" />
+	<link rel="stylesheet" href="css/gameover.css" type="text/css" charset="utf-8" />
+	<link rel="stylesheet" href="css/settings.css" type="text/css" charset="utf-8" />
+	<link rel="stylesheet" href="css/credits.css" type="text/css" charset="utf-8" />
+	<script type="text/javascript" src="js/cover.js"></script>
+	<script type="text/javascript" src="js/audioplayer.js"></script>
+	<script type="text/javascript" src="js/settings.js"></script>
+	<script type="text/javascript" src="js/tools.js"></script>
+	<script type="text/javascript" src="js/storage.js"></script>
+	<script type="text/javascript" src="js/cardreader.js"></script>
+	<script type="text/javascript" src="js/database-cards.js"></script>
+	<script type="text/javascript" src="js/database-aimodels.js"></script>
+	<script type="text/javascript" src="js/database-texts.js"></script>
+	<script type="text/javascript" src="js/localization.js"></script>
+	<script type="text/javascript" src="js/mainmenu.js"></script>
+	<script type="text/javascript" src="js/credits.js"></script>
+	<script type="text/javascript" src="js/battle.js"></script>
+	<script type="text/javascript" src="js/deckbuilder.js"></script>
+	<script type="text/javascript" src="js/setup.js"></script>
+	<script type="text/javascript" src="js/tournament.js"></script>
+	<script type="text/javascript" src="js/chaos.js"></script>
+	<script type="text/javascript" src="js/gameover.js"></script>
+</head>
+<body onload="onLoad()">
+	<div id="screen">
+		<div id="tournament">
+		</div>
+	</div>
+</body>
+<script>
+
+/* System */
+
+var cover, deckbuilder, setup, mainMenu, settings, gameOver,
+	tournament, tournamentWin, tournamentClear,
+	chaos, chaosWin, cardReader, Audio;
+
+function onLoad() {
+	Audio = new AudioPlayer({
+		resources:[
+			{id:"flick",file:"audio/flick.ogg"},
+			{id:"deploy",file:"audio/deploy.ogg"},
+			{id:"swing",file:"audio/swing.ogg"},
+			{id:"equip",file:"audio/equip.ogg"},
+			{id:"sword",file:"audio/sword.ogg"},
+			{id:"bottle",file:"audio/bottle.ogg"},
+			{id:"metal",file:"audio/metal.ogg"},
+			{id:"sworddown",file:"audio/sworddown.ogg"},
+			{id:"hit",file:"audio/hit.ogg"},
+			{id:"condemned",file:"audio/condemned.ogg"},
+			{id:"updatemaxmana",file:"audio/updatemaxmana.ogg"},
+			{id:"updatemana",file:"audio/updatemana.ogg"},
+			{id:"playerturn",file:"audio/playerturn.ogg"},
+			{id:"opponentturn",file:"audio/opponentturn.ogg"},
+			{id:"victory",file:"audio/victory.ogg"},
+			{id:"defeat",file:"audio/defeat.ogg"},
+			{id:"flagon",file:"audio/flagon.ogg"},
+			{id:"flagoff",file:"audio/flagoff.ogg"},
+			{id:"confirm",file:"audio/confirm.ogg"},
+			{id:"music-battle",file:"audio/music-battle.ogg"},
+			{id:"music-menu",file:"audio/music-menu.ogg"} // ,loopStart:1,loopEnd:3
+		],
+	});
+
+	cover=new Cover();
+	deckBuilder=new Deckbuilder();
+	setup=new Setup();
+	Storage.initialize();
+
+	/* Global UI */
+	mainMenu=new MainMenu();
+	settings=new Settings();
+	gameOver=new GameOver();
+	credits=new Credits();
+	cardReader=new CardReader();
+
+	/* Tournament mode */
+	tournament=new Tournament();
+	tournamentWin=new TournamentWin();
+	tournamentClear=new TournamentClear();
+
+	chaos=new Chaos();
+	chaosWin=new ChaosWin();
+
+	$.initialize();
+	cover.show();
+}
+
+</script>
+</html>

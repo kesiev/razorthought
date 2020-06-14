@@ -1,0 +1,478 @@
+html, body {
+	padding:0;
+	margin:0;
+	border:0;
+	width:100%;
+	height:100%;
+	overflow: hidden;
+}
+#screen {
+	font-family: 'germania_oneregular';
+	position: absolute;
+	padding:0;
+	margin: 0;
+	border: 0;
+	left: 0;
+	right: 0;
+	top:0;
+	bottom: 0;
+	color: rgba(250,255,181,1);
+	font-size: 3vh;
+	background: linear-gradient(to right, rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%);
+}
+
+/* Unselectable */
+
+#screen * {
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-khtml-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select: none;
+}
+
+/* Windows */
+
+.window {
+	background: linear-gradient(to bottom, rgba(235,229,205,1) 0%, rgba(250,255,181,1) 35%, rgba(255,241,148,1) 100%);
+	border:1px solid #4f0315;
+	box-shadow: 0 0.1vw 0.5vw #000;
+	border-radius: 0.5vw;
+	position: absolute;
+	transition: transform 0.5s;
+	transform:translate(0,-150vh) rotate(-10deg);
+}
+
+.window.show {
+	transform: translate(0,0) rotate(0deg);
+}
+
+.window.leave {
+	transform: translate(0,150vh) rotate(10deg);
+}
+
+.window > .frame {
+	position: absolute;
+}
+
+.subscreen .title {
+	position: absolute;
+	left: 0vw;
+	right:0vw;
+	top:2vh;
+	height:8vh;
+	color: #fff;
+	overflow:hidden;
+	white-space: nowrap;
+	text-shadow: 0 -0.3vh 0px #362016;	
+	line-height: 8vh;
+	text-align: center;
+	font-size: 6vh;	
+	z-index: 10;
+	border-top:1px solid #000;
+	border-bottom:1px solid #000;
+	box-shadow:0 1vh 1vh rgba(0,0,0,0.5);
+	background: linear-gradient(to bottom,
+		#970000 0%,
+		#970000 5%,
+		#ffc61e 5.1%,
+		#ffc61e 10%,
+		#970000 10.1%,
+		#7b0000 50%,
+		#970000 90%,
+		#ffc61e 90.1%,
+		#ffc61e 95%,
+		#970000 95.1%,
+		#970000 100%
+	);
+}
+
+.subscreen .command, #backbutton {
+	background:linear-gradient(to bottom, #f1007b 0%,#711228 100%);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-shadow: 0 0 2px #000;
+	border:1px solid #EF9BC5;
+	text-align: center;
+	font-size: 5vh;
+	border-radius: 0.5vw;
+}
+
+.subscreen .command:active, #backbutton:active {
+	background:linear-gradient(to bottom, #4e0c1c 0%,#a70055 100%);
+}
+
+.subscreen .command.disabled, #backbutton.disabled {
+	background: linear-gradient(to bottom, #6b6b6b 0%,#282828 100%,#000000 100%);
+	color: #C4C28B;
+}
+
+.window .backdecoration {
+	background:linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(168,164,88,0.98) 47%,rgba(0,0,0,1) 48%,rgba(54,32,22,1) 73%,rgba(54,32,22,1) 85%,rgba(0,0,0,1) 100%);
+}
+
+.window .l {
+	margin:0.5vh 0;
+	font-size: 9vh;
+}
+
+.window .s {
+	margin:1vh 0 2vh;
+}
+
+.window .m {
+	padding:1vh 0;
+	margin:1vh 0;
+	border-bottom:1px solid #362016;
+}
+
+.window .p {
+	padding:0.5vh 0;
+	margin:0.5vh 0;
+	line-height: 3.5vh;
+}
+
+/* Showcard */
+
+#screen .showcard {
+	z-index: 1000;
+	position: absolute;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	text-align: center;
+	background-color: rgba(0,0,0,0.8);
+}
+
+#screen .showcard .card {
+	background-color: rgba(0,0,0,0.7);
+        box-shadow: 0vw 0vw 0.5vw 0.5vw rgba(0,0,0,0.7);
+	-webkit-animation: sequence-0 0.1s linear forwards;    
+		animation: sequence-0 0.1s linear forwards;
+	display: inline-block;
+	top:44vh;
+	transform: scale(3.3);
+}
+
+/* Rolls */
+
+.roll .item .cardholder {
+	position: absolute;
+	left:0;
+	right: 0;
+	top: 0vh;
+	bottom:0vh;
+	text-align: center;
+}
+
+.roll .item .cardholder .card {
+	display: inline-block;
+	top:21vh;
+	transform:scale(2);
+}
+
+.roll .item .stats {
+	white-space: nowrap;
+	position: absolute;
+	left: 0;
+	right: 0;
+	text-align: center;
+	bottom: 11vh;
+	height: 6vh;
+	line-height: 6vh;
+	font-size: 5vh;
+	z-index: 10;
+}
+
+.roll .item .stats .symbol {
+	vertical-align: middle;	
+	display: inline-block;
+	width:6vh;
+	height:6vh;
+	margin-right: 0.5vw;
+	background-image: url(card/icons/deck.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.roll .item .fulltext {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	line-height: 73vh;
+	text-align: center;
+	font-size: 7vh;
+	text-shadow: 0 0 2vw #000;
+}
+
+
+/* Back button */
+
+#backbutton {
+	position: absolute;
+	left:1vw;
+	top:3.5vh;
+	height:5vh;
+	line-height: 5vh;
+	width:16vw;
+	z-index: 10;
+}
+
+/* layers */
+
+.guis {
+	z-index: 10;
+}
+
+.buttons {
+	z-index: 20;
+}
+
+/* Card layout */
+
+.card {
+	top:0;
+	border-radius: 100vh;
+	position: relative;
+	transition: all 0.1s;
+	width:15vh;
+	height:20vh;
+}
+
+.card .markersbox {
+	pointer-events:none;
+	position: absolute;
+	left:0;
+	right:0;
+	bottom:-10;
+	height:5vh;
+	z-index: 8;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.card .markersbox .marker.on {
+	display: inline-block;
+}
+
+.card .markersbox .marker {
+	width:5vh;
+	height:5vh;
+	position: relative;
+	top:0;
+	right:0;
+	margin:0 -1vh;
+}
+
+.card .icon {
+	pointer-events:none;
+	transition:transform 0.1s;
+	font-size:3vh;
+	text-shadow: 0px 0px 2px #000000;
+	width:8vh;
+	height:8vh;
+	text-align: center;
+	line-height: 8vh;
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+	z-index: 9;
+	font-weight: bold;
+}
+.icon.attack {
+	background-image: url(card/icons/attack.png);
+}
+.icon.armor {
+	background-image: url(card/icons/armor.png);
+}
+.icon.cost {
+	background-image: url(card/icons/cost.png);	
+}
+.icon.health {
+	background-image: url(card/icons/health.png);		
+}
+.icon.power {
+	background-image: url(card/icons/power.png);			
+}
+
+.marker {
+	position: absolute;
+	display:none;
+	z-index: 15;
+	width:9vh;
+	height: 9vh;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+.marker.on {
+	display: block;
+}
+.marker.preparing {
+	-webkit-animation: floating 2s linear infinite;    
+		animation: floating 2s linear infinite;
+	right:-2vh;
+	top:-2vh;
+	background-image:url(card/icons/preparing.png);
+}
+.marker.condemned {
+	-webkit-animation: pumping 2s ease-in-out infinite;    
+		animation: pumping 2s ease-in-out infinite;
+	right: 3.5vh;
+    top: -1vh;
+	background-image:url(card/icons/skull.png);
+}
+
+.marker.attackTwice { background-image:url(card/icons/attackTwice.png); }
+.marker.stealth { background-image:url(card/icons/stealth.png); }
+.marker.lifeSteal { background-image:url(card/icons/lifeSteal.png); }
+.marker.charge { background-image:url(card/icons/charge.png); }
+.marker.rushing { background-image:url(card/icons/rushing.png); }
+.marker.taunt { background-image:url(card/icons/taunt.png); }
+.marker.reborn { background-image:url(card/icons/reborn.png); }
+.marker.effect { background-image:url(card/icons/effect.png); }
+.marker.shield { background-image:url(card/icons/shield.png); }
+
+.card .attack {
+	position: absolute;		
+	left:-3vh;
+	bottom:-3vh;
+}
+.card .health {
+	position: absolute;
+	right:-3vh;
+	bottom:-3vh;				
+}
+.card .cost {
+	position: absolute;
+	left:-3vh;
+	top:-3vh;
+}
+.card .power, .card .armor {
+	position: absolute;
+	right:-3vh;
+	top:-3vh;				
+}
+
+.card .face {
+	position: absolute;
+	left:0vh;
+	right:0vh;
+	bottom:0vh;
+	top:0vh;
+	background-size: contain;
+	background-position: center center;
+	background-image: url(card/front.png);
+	background-repeat: no-repeat;
+}
+.card .face .frame, .card .face .art {
+	z-index: 5;
+	position: absolute;
+	top:-4.5vh;
+	left:-1vh;
+	right:-1vh;
+	height:15vh;
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.card .face .art {
+	z-index: 3;
+	-webkit-mask-size: contain;
+	-webkit-mask-position: center center;
+	-webkit-mask-repeat: no-repeat;
+}
+
+.card .face .art .image {
+	position: absolute;
+	left:0vh;
+	right:0vh;
+	top:3vh;
+	bottom:2vh;
+	background-color: #fff;
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.card .face .label {
+	color:#000;
+	z-index: 6;
+	font-size: 1.3vh;
+	position: absolute;
+	left:-0.2vh;
+	right:-0.2vh;
+	top:7.1vh;
+	height: 4vh;
+	line-height: 5.3vh;
+	text-align: center;
+	background-size: contain;
+	background-position: center center;
+	background-image: url(card/label.png);
+	background-repeat: no-repeat;
+	text-shadow: 0px 0px 2px #ffffff;
+}
+
+.card .face .description {
+	color:#fff;
+	text-shadow: 0px 0px 2px #000000;
+	font-size: 1.4vh;
+	position: absolute;
+	left:2.6vh;
+	right:2.6vh;
+	top:11.2vh;
+	height: 7vh;
+	line-height: 1.4vh;
+	text-align: center;
+	white-space: normal;
+}
+
+/* Card back */
+
+.card.back .face .description, .card.back .face .label, .card.back .face .art, .card.back .face .frame, .card.back .marker, .card.back .icon  {
+	display: none;
+}
+
+.card.back .face {
+	background-image: url(card/back.png);
+}
+
+/* Frame models */
+
+.card .face .frame.unitframe {
+	background-image: url(card/frames/unit.png);
+}
+
+.card .face .art.unitframe {
+	-webkit-mask-image:url(card/frames/unit-mask.png);		
+}
+
+.card .face .frame.actionframe {
+	background-image: url(card/frames/action.png);
+}
+
+.card .face .art.actionframe {
+	-webkit-mask-image:url(card/frames/action-mask.png);		
+}
+
+.card .face .frame.equipframe {
+	background-image: url(card/frames/equip.png);
+}
+
+.card .face .art.equipframe {
+	-webkit-mask-image:url(card/frames/equip-mask.png);		
+}
+
+.card .face .frame.heroframe {
+	background-image: url(card/frames/hero.png);
+}
+
+.card .face .art.heroframe {
+	-webkit-mask-image:url(card/frames/hero-mask.png);		
+}

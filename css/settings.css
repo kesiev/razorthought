@@ -1,0 +1,55 @@
+#settings .window {
+	left: 1vw;
+	right:1vw;
+	top:1vh;
+	bottom:1vh;
+}
+
+#settings {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top:0;
+	bottom: 0;
+}
+
+#settings .options {
+	position: absolute;
+	left:10vw;
+	right:10vw;
+	top:12vh;
+	bottom:1vh;
+}
+
+#settings .option {
+	position: relative;
+	height:7vh;
+	white-space: nowrap;
+	font-size: 5vh;
+	border-top:1px solid transparent;
+	border-bottom:1px solid transparent;
+	color: #362016;
+	margin:1vh 0;
+}
+
+#settings .option .key {
+	border-bottom: 1px solid #362016;
+	white-space: nowrap;
+	position: absolute;
+	left:2vw;
+	right:2vw;
+	top:1vh;
+}
+
+#settings .option .value {
+	white-space: nowrap;
+	position: absolute;
+	right:2vw;
+	top:1vh;
+}
+
+#settings .options .option:hover {
+	border-radius: 0.5vw;
+	border-top:1px solid #a8a458;
+	border-bottom:1px solid #a8a458;
+}

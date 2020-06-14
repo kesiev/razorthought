@@ -1,0 +1,80 @@
+#chaoswin .window {
+	left: 1vw;
+	right:1vw;
+	top:1vh;
+	bottom:1vh;
+}
+
+#chaoswin {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top:0;
+	bottom: 0;
+}
+
+#chaoswin .panel {
+	text-align: center;
+	position: absolute;
+	top:10vh;
+	width:32vw;
+	height:73vh;
+	width:31.33vw;
+}
+
+#chaoswin .panel .card {
+	top:26vh;
+	display: inline-block;
+	transform: scale(2.1);
+}
+
+#chaoswin .panel .stats {
+	white-space: nowrap;
+	position: absolute;
+	left: 0;
+	right: 0;
+	text-align: center;
+	bottom: 4vh;
+	height: 6vh;
+	line-height: 6vh;
+	font-size: 5vh;
+	z-index: 10;
+	color: #362016;
+}
+
+#chaoswin .panel .stats .symbol {
+	vertical-align: middle;	
+	display: inline-block;
+	width:6vh;
+	height:6vh;
+	margin-right: 0.5vw;
+	background-image: url(card/icons/deck.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+#chaoswin .panel:hover .card  {
+	z-index: 600 !important;
+	transform: scale(2.5);
+}
+
+#chaoswin .panel-0 {
+	left:1vw;
+}
+
+#chaoswin .panel-1 {
+	left:33.33vw;
+}
+
+#chaoswin .panel-2 {
+	left:65.66vw;
+}
+
+#chaoswin .confirm {
+	position: absolute;
+	width:31.33vw;
+	bottom:1vh;
+	height:12vh;
+	line-height:12vh;
+}

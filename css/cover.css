@@ -1,0 +1,145 @@
+#cover,#coverloading {
+	transition: all 1s;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top:0;
+	bottom: 0;
+}
+
+#cover .start {
+	-webkit-animation: sequence-4 2s linear forwards;    
+		animation: sequence-4 2s linear forwards;
+	position: absolute;
+	left:10vw;
+	right:10vw;
+	bottom:10vh;
+	height:10vh;
+	line-height:10vh;
+}
+
+#cover .creditsbox {
+	-webkit-animation: sequence-2 1s linear forwards;    
+		animation: sequence-2 1s linear forwards;
+	position: absolute;
+	left:10vw;
+	right:10vw;
+	top:27vh;
+	bottom:22vh;
+	text-align: center;
+	border-top:1px solid #a8a458;
+	border-bottom:1px solid #a8a458;
+	padding:1vh 0;	
+	border-radius: 0.5vw;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+
+#cover .creditsbox P {
+	padding:0.5vh 1vw;
+	margin:0.5vh 0;
+	line-height: 3.5vh;
+}
+
+#cover .buttoncomment {
+	-webkit-animation: sequence-4 2s linear forwards;    
+		animation: sequence-4 2s linear forwards;
+	left:10vw;
+	right:10vw;
+	position: absolute;
+	bottom:5vh;
+	height:4vh;
+	line-height: 4vh;
+	text-align: center;
+}
+
+#cover .creditsbox A {
+	color:#99f;
+	text-decoration: underline;
+}
+
+#cover .logo {
+	z-index: 10;
+	-webkit-animation: sequence-0 1s linear forwards;    
+		animation: sequence-0 1s linear forwards;
+	top:7vh;
+	position: absolute;
+	text-align: center;
+	left:0;
+	right:0;
+	height:10vh;
+	line-height: 10vh;
+	font-size: 10vh;
+	text-shadow: 0 0 1vw #000;
+}
+
+#cover .sublogo {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	z-index: 20;
+	-webkit-animation: sequence-1 1s linear forwards;    
+		animation: sequence-1 1s linear forwards;
+	z-index: 15;
+	position: absolute;
+	left:0;
+	right:0;
+	top:17vh;
+	height:5vh;
+	line-height: 5vh;
+	font-size:4vh;
+	text-align: center;
+	text-shadow: 0 0 1vw #000;
+}   
+
+#cover .cardart {
+	-webkit-animation: cardflip 2s ease-in-out forwards;    
+		animation: cardflip 2s ease-in-out forwards;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	position: absolute;
+	left:0;
+	right:0;
+	top:4vh;
+	height:20vh;
+	background-image: url(card/back.png);
+}
+
+#cover.leave, #coverloading.leave {
+	transform:translate(0,1vh);
+	opacity: 0;
+}
+
+#coverloading .loading {
+	position: absolute;
+	z-index: 10;
+	-webkit-animation: sequence-0 1s linear forwards;    
+		animation: sequence-0 1s linear forwards;
+	top:40vh;
+	height:20vh;
+	line-height: 20vh;
+	text-align: center;
+	left:0;
+	right:0;
+	font-size: 10vh;
+	text-shadow: 0 0 1vw #000;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#coverloading .cardart {
+	opacity: 0.3;
+	-webkit-animation: loading 5s infinite;    
+		animation: loading 5s infinite;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	position: absolute;
+	left:0;
+	right:0;
+	top:40vh;
+	height:20vh;
+	background-image: url(card/back.png);
+}

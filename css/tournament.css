@@ -1,0 +1,156 @@
+#tournament .window, #tournamentwin .window, #tournamentclear .window {
+	left: 1vw;
+	right:1vw;
+	top:1vh;
+	bottom:1vh;
+}
+
+#tournament, #tournamentwin, #tournamentclear {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top:0;
+	bottom: 0;
+}
+
+#tournamentwin .panel {
+	text-align: center;
+	position: absolute;
+	top:10vh;
+	width:32vw;
+	height:73vh;
+	width:31.33vw;
+}
+
+#tournamentwin .panel .card {
+	top:26vh;
+	display: inline-block;
+	transform: scale(2.1);
+}
+
+#tournamentwin .panel .stats {
+	white-space: nowrap;
+	position: absolute;
+	left: 0;
+	right: 0;
+	text-align: center;
+	bottom: 4vh;
+	height: 6vh;
+	line-height: 6vh;
+	font-size: 5vh;
+	z-index: 10;
+	color: #362016;
+}
+
+#tournamentwin .panel .stats .symbol {
+	vertical-align: middle;	
+	display: inline-block;
+	width:6vh;
+	height:6vh;
+	margin-right: 0.5vw;
+	background-image: url(card/icons/deck.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+#tournamentwin .panel:hover .card  {
+	z-index: 600 !important;
+	transform: scale(2.5);
+}
+
+#tournamentwin .panel-0 {
+	left:1vw;
+}
+
+#tournamentwin .panel-1 {
+	left:33.33vw;
+}
+
+#tournamentwin .panel-2 {
+	left:65.66vw;
+}
+
+#tournamentwin .confirm {
+	position: absolute;
+	width:31.33vw;
+	bottom:1vh;
+	height:12vh;
+	line-height:12vh;
+}
+
+#tournament .panel, #tournamentclear .panel {
+	overflow: hidden;
+	background-color: #f00;
+	position: absolute;
+	top:10vh;
+	left:1vw;
+	right:1vw;
+	height:73vh;
+	border-top:1px solid #a8a458;
+	border-bottom:1px solid #a8a458;
+	border-radius: 0.5vw;
+	white-space: nowrap;
+}
+
+#tournamentclear .panel {
+	background-color: #00f;
+	overflow-x: auto;
+}
+
+#tournamentclear .panel .item {
+	position: relative;
+	display: inline-block;
+	width:30vw;
+	height: 100%;
+}
+
+#tournament .roll .item {
+	position: relative;
+	display: inline-block;	
+	height: 100%;
+}
+
+#tournament .roll .item.main {
+	width:31.3vw;
+}
+
+#tournament .roll .item.next {
+	width:10vw;
+	background-image: url(card/back.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+#tournament .confirm, #tournamentclear .confirm {
+	position: absolute;
+	left:1vw;
+	right:1vw;
+	bottom:1vh;
+	height:12vh;
+	line-height:12vh;
+}
+
+#tournament .editdeck {
+	position: absolute;
+	left: 1vw;
+	width:29.3vw;
+	bottom:1vh;
+	height:7vh;
+	line-height: 7vh;
+	z-index: 600;
+}
+
+#tournament .versus {
+	position: absolute;
+	left:26vw;
+	width:10vw;
+	top:0;
+	bottom:17vh;
+	background-image: url(card/icons/versus.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	z-index: 100;
+}

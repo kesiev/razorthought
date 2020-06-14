@@ -1,0 +1,626 @@
+#battle {
+	position: absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom: 0;
+}
+
+#battle #thinking {
+	transition: all 0.2s;
+	opacity:0;
+	position:absolute;
+	top:14vh;
+	left:45vw;
+	width:10vw;
+	height:10vw;
+	background-image: url(card/icons/cog.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	z-index: 1000;
+	pointer-events:none;
+}
+
+#battle #thinking.think {
+	-webkit-animation: spinning 2s linear infinite;    
+		animation: spinning 2s linear infinite;
+	opacity:1;
+}
+
+#battle #arrow {
+    transform-origin: 0 0;
+    border:5px dashed #f00;
+    position:absolute;
+    display:none;
+    z-index: 1000;
+    pointer-events:none;
+}
+#battle #arrow.show {
+	display: block;
+}
+
+#battle #fullscreenmessage {
+	transition: transform,opacity 1s;
+	position: absolute;
+	z-index: 1500;
+	left: 0;
+	right: 0;
+	top:0;
+	bottom:0;
+	background-color: rgba(0,0,0,.5);
+	display: none;		
+}
+#battle #fullscreenmessage.enable {
+	display: block;
+}
+#battle #fullscreenmessage.show {
+	opacity: 1;
+}
+#battle #fullscreenmessage.show.leave {
+	opacity: 0;
+}
+#battle #fullscreenmessage .image {
+	white-space: nowrap;
+	transition: all 0.5s ease-out;
+	transform: scale(0);
+	position: absolute;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	left:0vw;
+	width:100vw;
+	top:20vh;
+	height:60vh;
+	line-height:60vh;
+	text-align: center;
+	color:#fff;
+	font-size: 10vh; 
+	color:#fff;
+	text-shadow: 0px 0px 4px #dedede;
+}
+#battle #fullscreenmessage.show .image {
+	transform: scale(1);
+}
+#battle #fullscreenmessage.show.leave .image {
+	transform: scale(1.3);
+}
+#battle #fullscreenmessage.playerturn .image {
+	background-image: url(card/icons/armor.png)
+}
+#battle #fullscreenmessage.cputurn .image {
+	background-image: url(card/icons/attack.png)
+}
+#battle #fullscreenmessage.victory .image {
+	font-size: 17vh; 
+	background-image: url(card/icons/cost.png)
+}
+#battle #fullscreenmessage.defeat .image {
+	font-size: 17vh;
+	background-image: url(card/icons/health.png)
+}
+
+#battle .buttons {
+	transition: transform 0.5s;
+}
+
+#battle .dock {
+	transition: transform 0.5s;
+	position: absolute;
+	width:40vw;
+	height:15vh;
+}
+#battle .cards.dock {
+	z-index: 10;
+	width: 15vh;
+	background-image: url(card/icons/deck.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	text-shadow: 0px 0px 2px #000000;
+	font-size: 3vh;
+	line-height: 15vh;
+	text-align: center;
+}
+#battle .corner.dock {
+	z-index: 20;
+	left:7vh;	
+	width: 15vh;
+	background-image: url(card/icons/cost.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	text-shadow: 0px 0px 2px #000000;
+	font-size: 3vh;
+	line-height: 15vh;
+	text-align: center;
+}
+#battle .exit.dock {
+	z-index: 500;
+	width: 15vh;
+	border-radius: 100vw;
+	background-image: url(card/icons/exit.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	text-shadow: 0px 0px 2px #000000;
+	font-size: 3vh;
+	line-height: 15vh;
+	text-align: center;
+	transition: all 0.1s;
+	transform: scale(0);
+}
+#battle .pass.dock {
+	z-index: 30;
+	border-radius: 100vw;
+	left:15vh;
+	width: 15vh;
+	text-shadow: 0px 0px 2px #000000;
+	background-image: url(card/icons/power.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	font-size: 3vh;
+	line-height: 15vh;
+	text-align: center;
+	transition: all 0.1s;
+	transform: scale(0);
+}
+#battle .pass.dock.show,#battle .exit.dock.show {
+	transform: scale(1);
+}
+
+#battle .bottom { bottom:0; }
+#battle .left { left:0; }
+#battle .right { right:0; }
+
+#battle .background1 {
+	transition: opacity 1s;
+	z-index: 5;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-image: url(battle/background.png);
+	background-position: center;
+	background-size: cover;
+}
+
+#battle .background2 {
+	transition: transform 1s;
+	position: absolute;
+	left: 0;
+	right: 0;
+	height:50vh;
+	z-index: 2;
+}
+
+#battle #topside {
+	top:0;
+}
+
+#battle #bottomside {
+	top:50vh;
+}
+
+/* Card fan */
+
+#battle .fan {
+	position: absolute;
+}
+
+#battle .fan .card {
+	position: absolute;
+}
+
+#battle .dock.top .fan {
+	top:-3vh;
+}
+
+/* Dock */
+
+#battle .fan.left .card:nth-child(2) { left:5vw; z-index: 50;}
+#battle .fan.left .card:nth-child(3) { left:10vw; z-index: 100;}
+#battle .fan.left .card:nth-child(4) { left:15vw; z-index: 150;}
+#battle .fan.left .card:nth-child(5) { left:20vw; z-index: 200; }
+#battle .fan.left .card:nth-child(6) { left:25vw; z-index: 250; }
+#battle .fan.left .card:nth-child(7) { left:30vw; z-index: 300; }
+#battle .fan.left .card:nth-child(8) { left:35vw; z-index: 350; }
+#battle .fan.left .card:nth-child(9) { left:40vw; z-index: 400; }
+#battle .fan.left .card:nth-child(10) { left:45vw; z-index: 450; }
+
+#battle .fan.right .card:nth-child(1) { right:0vw; z-index: 10; }
+#battle .fan.right .card:nth-child(2) { right:5vw; z-index: 50; }
+#battle .fan.right .card:nth-child(3) { right:10vw; z-index: 100; }
+#battle .fan.right .card:nth-child(4) { right:15vw; z-index: 150; }
+#battle .fan.right .card:nth-child(5) { right:20vw; z-index: 200; }
+#battle .fan.right .card:nth-child(6) { right:25vw; z-index: 250; }
+#battle .fan.right .card:nth-child(7) { right:30vw; z-index: 300; }
+#battle .fan.right .card:nth-child(8) { right:35vw; z-index: 350; }
+#battle .fan.right .card:nth-child(9) { right:40vw; z-index: 400; }
+#battle .fan.right .card:nth-child(10) { right:45vw; z-index: 450; }
+
+#battle .dock .card:hover  {
+	z-index: 600 !important;
+}
+
+#battle .dock.bottom .card:hover {
+	top:-7vh;
+}
+
+#battle .dock.top .card:hover {
+	top:7vh;
+}
+
+/* Frame corners */
+
+#battle .framecorner {
+	pointer-events:none;
+	background-image: url(battle/corner.png);
+	width:13vw;
+	height:13vw;
+	position: absolute;
+	background-size: contain;
+	background-repeat: no-repeat;
+	z-index: 5;
+}
+#battle .framecorner.bottomleft {
+	left:-1vw;
+	bottom:-2.37vw;
+}
+#battle .framecorner.bottomright {
+	transform: scaleX(-1);
+	right:-1vw;
+	bottom:-2.37vw;
+}
+#battle .framecorner.topleft {
+	left:-1vw;
+	top:-2.37vw;
+	transform: scaleY(-1);
+}
+#battle .framecorner.topright {
+	right:-1vw;
+	top:-2.37vw;
+	transform: scaleY(-1) scaleX(-1);
+}
+
+/* Hero */
+
+#battle .hero {
+	position: absolute;
+	width:20vw;
+	height:22vh;
+	left:40vw;
+}
+
+#battle .hero .card .cost,
+#battle .hero .card .label,
+#battle .hero .card .description,
+#battle .hero .card .frame {
+	display: none;
+} 
+
+#battle .hero .card .face,
+#battle .hero .card {
+	position: absolute;
+	width:100%;
+	height:100%;
+	background-image: none;
+}
+
+#battle .hero .card .art, #battle .hero .card .art .image {
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	height: auto;
+	mask:none;
+	background-size: cover;
+	-webkit-mask-image:none !important;
+}
+
+#battle .hero.bottom .markersbox {
+	bottom:1vh;
+}
+
+#battle .hero.top .markersbox {
+	bottom:inherit;
+	top:1vh;
+}
+
+#battle .hero.bottom .card .icon {
+	bottom:inherit;
+	top:-3vh;
+}
+
+#battle .hero .card .icon.armor {
+	right:3vh;
+}
+
+#battle .hero.top .card .icon {
+	top:auto;
+	bottom:-3vh;
+}
+
+/* Card on row */
+
+#battle .row .card {
+	background-color: rgba(0,0,0,0.4);
+    box-shadow: 0 0 5vw rgba(0,0,0,0.9);
+	position: relative;
+	display: inline-block;
+	width:16vh;
+	height:21vh;
+	margin:0 1vh;
+}
+
+#battle .row .card .cost,
+#battle .row .card .label,
+#battle .row .card .description  {
+	display: none;
+}
+
+#battle .row .card .face {
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	background-image: none;
+}
+
+#battle .row .card .markersbox {
+	bottom:2vh;
+}
+
+#battle .row .card .frame,
+#battle .row .card .art {
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	height: auto;
+}
+
+#battle .row .card .attack {
+	left:-1vh;
+}
+
+#battle .row .card .health {
+	right:-1vh;
+}
+
+/* Table */
+
+#battle .tableperspective {
+	perspective: 44vh;
+	position: absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+}
+
+#battle .tableperspective .table {
+	transform:rotateX(15deg) translate(0,-3vh);
+}
+
+#battle .table {
+	z-index: 5;
+	left:0;
+	right:0;
+	position: absolute;
+	top:0;
+	bottom:0;
+}
+
+#battle .table .deployed {
+	position: absolute;
+	height: 35vh;
+	left: 0;
+	right: 0;
+	z-index: 10;
+}
+
+#battle .deployed.top {
+	top:15vh;
+}
+
+#battle .deployed.bottom {
+	bottom:15vh;
+}
+
+#battle .row {
+	left: 0;
+	right: 0;
+	position: absolute;
+	text-align: center;
+	white-space: nowrap;
+}
+
+#battle .deployed.bottom .row {
+	top:3vh;
+}
+
+#battle .deployed.top .row {
+	bottom:3vh;
+}
+
+/* Game start */
+
+#battle .present {
+	transition: transform 2s;
+	position: absolute;
+	width: 50vw;
+	height:100vh;
+	text-align: center;
+	z-index: 100;
+}
+
+#battle .present .card {
+	top:40vh;
+	display: inline-block;
+	transform: scale(3);
+}
+
+#battle .versus {
+	transition: all 1s;
+	position: absolute;
+	left:30vw;
+	right:30vw;
+	top:30vh;
+	bottom:30vh;
+	z-index: 150;
+	background-image: url(card/icons/versus.png);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#battle .present.left {
+	left:0;
+}
+
+#battle .present.right {
+	right:0;
+}
+
+#battle .table.leave {
+	opacity: 0;
+}
+
+#battle .present.left.leave {
+	transform:translate(-100vw,0);
+}
+
+#battle .present.right.leave {
+	transform:translate(100vw,0);
+}
+
+#battle .versus.leave {
+	opacity: 0;
+	transform:scale(0);
+}
+
+#battle .bottom.leave {
+	transform:translate(0,50vh);
+}
+
+#battle .top.leave {
+	transform:translate(0,-50vh);
+}
+
+#battle #topside.leave {
+	transform:translate(0,-50vh);
+}
+
+#battle #bottomside.leave {
+	transform:translate(0,50vh);
+}
+
+#battle .background1.leave {
+	opacity: 0;
+}
+
+/* Animations */
+
+#battle .top .fan .card.drawing,
+#battle .top.hero .card.entering {
+	transform: translate(0vw,-16vh);
+}
+
+#battle .bottom .fan .card.drawing,
+#battle .bottom.hero .card.entering {
+	transform: translate(0vw,16vh);
+}
+
+#battle .top .fan .card.play,
+#battle .top .fan .card.wasting {
+	transform: translate(-10vw,45vh) scale(2);
+	z-index: 300;
+}
+
+#battle .bottom .fan .card.play,
+#battle .bottom .fan .card.wasting {
+	transform: translate(-10vw,-45vh) scale(2);
+	z-index: 300;
+}
+
+#battle .top .fan .card.discard,
+#battle .top .fan .card.wasted {
+	transform: translate(-10vw,-30vh) scale(1);
+}
+
+#battle .bottom .fan .card.discard,
+#battle .bottom .fan .card.wasted {
+	transform: translate(-10vw,30vh) scale(1);
+}
+
+#battle .table .card.discard {
+	transform: scale(0);
+}
+
+#battle .hero .icon.max,
+#battle .table .icon.max {
+	color:#00ff88;
+	text-shadow: 0px 0px 3px #000;
+}
+
+#battle .icon.changed {
+	transform: scale(2);
+}
+
+#battle .card.action {
+	transform:scale(1.2);
+	z-index: 300;
+}
+
+#battle .card.selected {
+	background-color: #f00;
+	box-shadow: 0px 0px 5px #0f0;
+}
+
+#battle .card.playable,
+#battle .card.targetable,
+#battle .deployed.targetable,
+#battle .pass.dock.show,
+#battle .exit.dock.show {
+	-webkit-animation: selectableBlink 1s linear infinite;    
+		animation: selectableBlink 1s linear infinite;
+}
+
+#battle .card.targeting,
+#battle .deployed.targeting {
+	-webkit-animation: targetingBlink 1s linear infinite;    
+		animation: targetingBlink 1s linear infinite;
+}
+
+#battle .hero .playable,
+#battle .hero .targetable {
+	z-index: 300 !important;
+}
+
+#battle .card.targeting {
+	transform:scale(1.3);
+	z-index: 300 !important;
+}
+
+#battle .card.NOactionsToGo {
+	opacity: 0.5;
+}
+
+#battle .card.stealth .face .art {
+	filter: brightness(50%);
+}
+
+#battle .top .fan .card.deployed {
+	transform:translate(-10vw,45vh) scale(0);
+}
+
+#battle .bottom .fan .card.deployed {
+	transform: translate(-10vw,-45vh) scale(0);
+}
+
+#battle .card.deploying {
+	transform:scale(0);
+}

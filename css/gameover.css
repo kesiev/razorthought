@@ -1,0 +1,35 @@
+#gameover {
+	transition: all 1s;
+	opacity: 1;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+}
+
+#gameover .gameovermessage {
+	line-height:100vh;
+	text-align: center;
+	font-size: 12vh;
+	text-shadow: 0 0 1vw #000;
+	position: absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	white-space: nowrap;
+}
+
+#gameover .gameovertext {
+	font-size:3vh;
+	position: absolute;
+	left:2vw;
+	right:2vw;
+	top:60vh;
+	text-align: center;
+	text-shadow: 0 0 1vw #000;
+}
+
+#gameover.leave {
+	opacity: 0;
+}

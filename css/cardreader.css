@@ -1,0 +1,127 @@
+#cardreader .window {
+	left: 1vw;
+	right:1vw;
+	top:1vh;
+	bottom:1vh;
+}
+
+#cardreader {
+	position: absolute;
+	left: 0;
+	left: 0;
+	right: 0;
+	top:0;
+	bottom: 0;
+}
+
+#cardreader .text {
+	position: absolute;
+	left:33vw;
+	right:2vw;
+	top:12vh;
+	bottom:1vh;
+	overflow-x:hidden;
+	overflow-y:auto;
+	color: #362016;
+	z-index: 10;
+}
+
+#cardreader .text P {
+	padding:0;
+	margin:0 0 1vh 0;
+}
+
+#cardreader .background {
+	 -webkit-mask-position: 0 0;
+    /*-webkit-mask-size: 200px 200px;*/
+    -webkit-mask-image: -webkit-gradient(linear, left center, right center, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(255, 255, 255, 1)));
+    filter: blur(2px);
+	-webkit-filter: blur(2px);
+	position: absolute;
+	right:1vw;
+	bottom:1vw;
+	width:30vw;
+	top:1vh;
+	opacity: 0.3;
+	background-repeat: no-repeat;
+	background-size: 150vh;
+	background-position: center;
+}
+
+#cardreader .text .m {
+	margin-top:0;
+	padding-top: 0;
+}
+
+#cardreader .p.message {
+	font-style: italic;
+}
+
+#cardreader .deck {
+	left:1vw;
+	top:12vh;
+	bottom:1vh;
+	width:30vw;
+	overflow-y:auto;
+	border-top:1px solid #a8a458;
+	border-bottom:1px solid #a8a458;
+}
+
+#cardreader .deck .item {
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	border:1px solid #362016;
+	border-radius: 0.5vw;
+	height: 8vh;
+}
+
+#cardreader .deck .item .image {
+	background-color: #362016;
+	background-position: 50% 40%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	filter: brightness(20%);
+}
+
+#cardreader .deck .item .cardname {
+	z-index: 1;
+	font-size: 3vh;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	position: absolute;
+	left:1vh;
+	top:0;
+	bottom:0;
+	right:1vw;	
+	text-shadow: 0 0 2px #fff;
+	line-height: 8vh;
+}
+
+#cardreader .deck .item.unread .bullet {
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	background-image: url(card/icons/cost.png);
+	right: 1vh;
+	top:1vh;
+	width:6vh;
+	height:6vh;
+	z-index: 10;
+}
+
+#cardreader .deck .item.selected .cardname {
+	color:#362016;
+	text-shadow: none;
+}
+
+#cardreader .deck .item.selected .image {
+	opacity:0.5;
+}
+
